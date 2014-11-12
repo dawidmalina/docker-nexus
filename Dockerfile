@@ -11,11 +11,11 @@ ENV NEXUS_VERSION nexus-2.10.0-02
 RUN yum -y install unzip && yum clean all
 
 RUN cd /usr/local && \
-    curl -LO http://download.sonatype.com/nexus/oss/${$NEXUS_VERSION}-bundle.zip && \
-    unzip ${NEXUS_VERSION}-bundle.zip
+    curl -LO http://download.sonatype.com/nexus/oss/$NEXUS_VERSION-bundle.zip && \
+    unzip $NEXUS_VERSION-bundle.zip
  
 EXPOSE 8081
 
 VOLUME ["/usr/local/sonatype-work/nexus"]
 
-CMD RUN_AS_USER=root /usr/local/${NEXUS_VERSION}/bin/nexus console
+CMD RUN_AS_USER=root /usr/local/$NEXUS_VERSION/bin/nexus console

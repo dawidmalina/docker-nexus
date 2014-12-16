@@ -16,6 +16,4 @@ RUN cd /usr/local && \
  
 EXPOSE 8081
 
-VOLUME ["/usr/local/sonatype-work/nexus"]
-
 CMD RUN_AS_USER=root /usr/local/$NEXUS_VERSION/bin/nexus console
